@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Création du projet" />
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Correction gitignore">
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/expense/expense.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/expense/expense.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/expense/expense.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/expense/expense.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/user/user.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/user/user.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/user/user.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/user/user.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/services/expense.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/services/expense.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/services/user.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expense-tracker-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/app.module.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,30 +35,34 @@
     </option>
   </component>
   <component name="ProjectId" id="2NKn8tUjzvDzWXaGwpb41VozKsJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ungk/OneDrive/Bureau/projetsPersos/expenseApp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;38a9bd4d41c3c80b3dc90afc150646b7&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ungk/OneDrive/Bureau/projetsPersos/expenseApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "38a9bd4d41c3c80b3dc90afc150646b7",
+    "ts.external.directory.path": "C:\\Users\\ungk\\OneDrive\\Bureau\\projetsPersos\\expenseApp\\expense-tracker-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.ExpensesAppApplication">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
@@ -77,7 +95,23 @@
       <updated>1679421486815</updated>
       <workItem from="1679421487979" duration="86000" />
       <workItem from="1679421588325" duration="407000" />
+      <workItem from="1679422324948" duration="307000" />
     </task>
+    <task id="LOCAL-00001" summary="Ajout dépendances">
+      <created>1679422375373</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679422375373</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Correction gitignore">
+      <created>1679422498640</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679422498640</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,5 +127,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Ajout dépendances" />
+    <MESSAGE value="Correction gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction gitignore" />
   </component>
 </project>

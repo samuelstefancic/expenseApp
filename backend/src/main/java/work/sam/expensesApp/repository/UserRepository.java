@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 import work.sam.expensesApp.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+
+    User findByFirstNameAndLastNameAndId(String firstname, String lastname, Long id);
 }

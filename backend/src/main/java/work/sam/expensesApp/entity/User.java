@@ -1,6 +1,7 @@
 package work.sam.expensesApp.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,9 +21,11 @@ public class User {
     private Long id;
 
     @Column(name= "FirstName",nullable = false)
+    @NotBlank
     private String firstName;
 
     @Column(name = "LastName", nullable = false)
+    @NotBlank
     private String lastName;
 
     private int age;

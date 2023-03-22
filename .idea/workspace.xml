@@ -5,24 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Correction gitignore">
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/expense/expense.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/expense/expense.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/expense/expense.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/expense/expense.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/user/user.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/user/user.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/user/user.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/components/user/user.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/services/expense.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/services/expense.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/services/user.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/admin/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expense-tracker-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/expense-tracker-frontend/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/ExpenseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/UserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,6 +64,11 @@
     "spring.configuration.checksum": "38a9bd4d41c3c80b3dc90afc150646b7",
     "ts.external.directory.path": "C:\\Users\\ungk\\OneDrive\\Bureau\\projetsPersos\\expenseApp\\expense-tracker-frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.ExpensesAppApplication">
@@ -96,6 +104,7 @@
       <workItem from="1679421487979" duration="86000" />
       <workItem from="1679421588325" duration="407000" />
       <workItem from="1679422324948" duration="307000" />
+      <workItem from="1679490757691" duration="7531000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -133,5 +142,16 @@
     <MESSAGE value="Ajout dépendances" />
     <MESSAGE value="Correction gitignore" />
     <option name="LAST_COMMIT_MESSAGE" value="Correction gitignore" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/User.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

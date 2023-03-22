@@ -10,5 +10,8 @@ public class ExpenseException extends RuntimeException {
         this.httpStatus = httpStatus;
     }
 
+
+
     public HttpStatus getHttpStatus() {return httpStatus;}
+
 }

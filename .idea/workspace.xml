@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Correction gitignore">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/ExpenseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/UserException.java" afterDir="false" />
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Ajout méthodes UserService, ajout méthode UserRepository, ajout gestion des exceptions">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/ExpenseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/ExpenseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/ExpenseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/ExpenseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +106,7 @@
       <workItem from="1679421487979" duration="86000" />
       <workItem from="1679421588325" duration="407000" />
       <workItem from="1679422324948" duration="307000" />
-      <workItem from="1679490757691" duration="7531000" />
+      <workItem from="1679490757691" duration="16785000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -120,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679422498640</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ajout méthodes UserService, ajout méthode UserRepository, ajout gestion des exceptions">
+      <created>1679499187602</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679499187602</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,17 +150,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Ajout dépendances" />
     <MESSAGE value="Correction gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correction gitignore" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/User.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Ajout méthodes UserService, ajout méthode UserRepository, ajout gestion des exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout méthodes UserService, ajout méthode UserRepository, ajout gestion des exceptions" />
   </component>
 </project>

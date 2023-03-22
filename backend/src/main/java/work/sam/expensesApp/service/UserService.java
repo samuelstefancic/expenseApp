@@ -1,15 +1,21 @@
 package work.sam.expensesApp.service;
 
 import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.entity.User;
 import work.sam.expensesApp.exception.UserException;
 import work.sam.expensesApp.repository.UserRepository;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -33,16 +39,10 @@ public class UserService {
 
     public User getUserById(Long id) {
         return userRepository.findById(id)
-                .orElseThrow(() -> new UserException("user not found", HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new UserException("user with ID : " + id + "not found", HttpStatus.NOT_FOUND));
     }
 
-    public User getUserByFirstNameAndLastNameAndId(String firstname, String lastname, Long id) {
-        if (firstname == null || firstname.trim().isEmpty()) {
-            throw new UserException("First name is required", HttpStatus.BAD_REQUEST );
-        }
-        if (lastname == null || lastname.trim().isEmpty()) {
-            throw new UserException("Last name is required", HttpStatus.BAD_REQUEST);
-        }
+    public User getUserByFirstNameAndLastNameAndId(@NotBlank String firstname, @NotBlank String lastname, Long id) {
         if (!userRepository.existsById(id)) {
             throw new UserException("User with ID : " + id + " not found", HttpStatus.NOT_FOUND);
         }
@@ -51,19 +51,42 @@ public class UserService {
 
     //Update
     public User updateUser(Long id, User updatedUser) {
-        Optional<User> user = userRepository.findById(id);
-        if (user.isPresent()) {
-            User existingUser = user.get();
-            existingUser.setFirstName(updatedUser.getFirstName());
-            existingUser.setLastName(updatedUser.getLastName());
-            existingUser.setExpenses(updatedUser.getExpenses());
-            existingUser.setLocation(updatedUser.getLocation());
-            existingUser.setAge(updatedUser.getAge());
-            return userRepository.save(existingUser);
-        } else {
-            throw new UserException("Server not found with id : " + id, HttpStatus.BAD_REQUEST);
-        }
+        User user = userRepository.findById(id).orElseThrow(() -> new UserException("The user with id " + id + " does not exist", HttpStatus.NOT_FOUND));
+
+            user.setFirstName(updatedUser.getFirstName());
+            user.setLastName(updatedUser.getLastName());
+            user.setAge(updatedUser.getAge());
+            user.setLocation(updatedUser.getLocation());
+            user.setIncome(updatedUser.getIncome());
+
+            // Met à jour les dépenses existantes et ajoute les nouvelles dépenses
+            List<Expense> updatedExpenses = updatedUser.getExpenses();
+            Map<Long, Expense> updatedExpensesMap = updatedExpenses.stream()
+                    .collect(Collectors.toMap(Expense::getId, Function.identity()));
+
+            List<Expense> existingExpenses = user.getExpenses();
+            Map<Long, Expense> existingExpensesMap = existingExpenses.stream()
+                    .collect(Collectors.toMap(Expense::getId, Function.identity()));
+
+            // Update les dépenses existantes
+            updatedExpensesMap.forEach((expenseId, updatedExpense) -> {
+                Expense existingExpense = existingExpensesMap.get(expenseId);
+                if (existingExpense != null) {
+                    existingExpense.setAmount(updatedExpense.getAmount());
+                    existingExpense.setDescription(updatedExpense.getDescription());
+                } else {
+                    user.addExpense(updatedExpense);
+                }
+            });
+
+            // Remove les expenses qui ne sont pas présentes dans la liste mise à jour
+            existingExpenses.removeIf(expense -> !updatedExpensesMap.containsKey(expense.getId()));
+
+            return userRepository.save(user);
+
     }
+
+
 
     //Delete
     public void deleteUserById(Long id) {

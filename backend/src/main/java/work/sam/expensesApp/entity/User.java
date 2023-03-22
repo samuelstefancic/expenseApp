@@ -1,11 +1,14 @@
 package work.sam.expensesApp.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -31,18 +34,27 @@ public class User {
     private int age;
     private String location;
 
-    private double income;
+    private BigDecimal income;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Expense> expenses;
+    @Valid
+    private List<Expense> expenses = new ArrayList<>();
 
-    public User(String firstName, String lastName, int age, String location, double income) {
+    public User(String firstName, String lastName, int age, String location, BigDecimal income) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.location = location;
         this.income = income;
     }
+    public void addExpense(Expense expense) {
+        expenses.add(expense);
+        expense.setUser(this);
+    }
 
+    public void removeExpense(Expense expense) {
+        expenses.remove(expense);
+        expense.setUser(null);
+    }
 
 }

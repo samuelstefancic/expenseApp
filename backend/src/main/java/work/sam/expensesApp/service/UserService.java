@@ -29,7 +29,11 @@ public class UserService {
     //Créer l'utilisateur
     public User createUser(User user) {
         try {
-            return userRepository.save(user);
+            User createdUser = userRepository.save(user);
+            if (createdUser == null || createdUser.getId() == null) {
+                throw new UserException("Failed to create user: user ID is null", HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+            return createdUser;
         } catch (DataAccessException | ConstraintViolationException e) {
             throw new UserException("Failed to create user: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }

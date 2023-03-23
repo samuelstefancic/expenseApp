@@ -18,8 +18,8 @@ import java.util.List;
 @NoArgsConstructor
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "generateur_user")
-    @SequenceGenerator(name="generateur_user", sequenceName = "sequence_user", initialValue = 20, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "generator_user")
+    @SequenceGenerator(name="generator_user", sequenceName = "sequence_user", allocationSize = 1)
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
@@ -39,6 +39,15 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @Valid
     private List<Expense> expenses = new ArrayList<>();
+
+    public User(String firstName, String lastName, int age, String location, BigDecimal income, List<Expense> expenses) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.location = location;
+        this.income = income;
+        this.expenses = expenses != null ? expenses : new ArrayList<>();
+    }
 
     public User(String firstName, String lastName, int age, String location, BigDecimal income) {
         this.firstName = firstName;

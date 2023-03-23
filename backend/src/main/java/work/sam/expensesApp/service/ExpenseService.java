@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import work.sam.expensesApp.entity.Description;
 import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.entity.User;
 import work.sam.expensesApp.exception.ExpenseException;
@@ -14,9 +15,9 @@ import work.sam.expensesApp.repository.ExpenseRepository;
 import work.sam.expensesApp.repository.UserRepository;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ExpenseService {
@@ -24,11 +25,14 @@ public class ExpenseService {
     private final ExpenseRepository expenseRepository;
     private final UserRepository userRepository;
 
+
+
     @Autowired
     public ExpenseService(ExpenseRepository expenseRepository,
                           UserRepository userRepository) {
         this.expenseRepository = expenseRepository;
         this.userRepository = userRepository;
+
     }
 
 
@@ -36,11 +40,20 @@ public class ExpenseService {
 
     public Expense createExpense(Expense expense) {
         try {
+            expense.getDescription().forEach(description -> description.setExpense(expense));
             return expenseRepository.save(expense);
         } catch (DataAccessException | ConstraintViolationException e) {
             throw new ExpenseException("Failed to create this expense" + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    public Expense createExpenseForUser(Long userId, Expense expense) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new UserException("User not found with id : " + userId, HttpStatus.NOT_FOUND));
+        expense.setUser(user);
+        return createExpense(expense);
+    }
+
     //Find expense
 
     public Expense findExpenseById(Long id) {
@@ -53,8 +66,7 @@ public class ExpenseService {
     public Expense updateExpense(Long id, @Valid Expense updatedExpense) {
         Expense existingExpense = expenseRepository.findById(id)
                 .orElseThrow(() -> new ExpenseException("Expense not found with id: " + id, HttpStatus.NOT_FOUND));
-        existingExpense.setDescriptionWithValidation(updatedExpense.getDescription());
-        existingExpense.setDescription(updatedExpense.getDescription());
+        setDescriptionWithValidation(existingExpense, updatedExpense.getDescription());
         return expenseRepository.save(existingExpense);
     }
 
@@ -87,5 +99,22 @@ public class ExpenseService {
         }
         return expenses.stream().map(Expense::getAmount).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
+
+    public void setDescriptionWithValidation(Expense expense, List<Description> descriptions) {
+        if (descriptions == null || descriptions.isEmpty()) {
+            throw new ExpenseException("The description must be filled", HttpStatus.BAD_REQUEST);
+        }
+        descriptions.forEach(x -> x.setUpdatedAt(LocalDateTime.now()));
+        expense.setDescription(descriptions);
+    }
+
+    public void updateAmount(Expense expense, BigDecimal newAmount) {
+        expense.setAmount(newAmount);
+        if (!expense.getDescription().isEmpty()) {
+            Description latestDescription = expense.getDescription().get(expense.getDescription().size() - 1);
+            latestDescription.setUpdatedAt(LocalDateTime.now());
+        }
+    }
+
 
 }

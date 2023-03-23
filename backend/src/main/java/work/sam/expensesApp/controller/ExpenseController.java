@@ -1,5 +1,6 @@
 package work.sam.expensesApp.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import work.sam.expensesApp.entity.Expense;
@@ -10,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/expenses")
+@RequestMapping("/api")
 public class ExpenseController {
     private final ExpenseService expenseService;
     private final UserService userService;
@@ -21,7 +22,7 @@ public class ExpenseController {
     }
 
     //Controller retournant les dépenses par userId
-    @GetMapping("/{userId}")
+    @GetMapping("/users/{userId}/expenses")
     public ResponseEntity<List<Expense>> getExpensesByUserId(@PathVariable Long userId) {
         userService.getUserById(userId);
         List<Expense> expenses = expenseService.getExpensesByUserId(userId);
@@ -30,7 +31,7 @@ public class ExpenseController {
 
     //Controller pour retourner toutes les dépenses
     //Format BigDécimal au lieu de List
-    @GetMapping("/total/{userId}")
+    @GetMapping("/users/{userId}/expenses/total")
     public ResponseEntity<BigDecimal> getSumExpensesByUserId(@PathVariable Long userId) {
         userService.getUserById(userId);
         BigDecimal totalExpenses = expenseService.getTotalExpensesByUserId(userId);
@@ -39,9 +40,15 @@ public class ExpenseController {
 
     //Delete expenses
 
-    @DeleteMapping("/delete/{expenseId}")
+    @DeleteMapping("/expenses/delete/{expenseId}")
         public ResponseEntity<Void> deleteExpense (@PathVariable Long expenseId) {
         expenseService.deleteExpenseById(expenseId);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/expenses/{expenseId}")
+    public ResponseEntity<Expense> updateExpense(@PathVariable Long expenseId, @RequestBody Expense updatedExpense) {
+        Expense expense = expenseService.updateExpense(expenseId, updatedExpense);
+        return ResponseEntity.ok(expense);
     }
 }

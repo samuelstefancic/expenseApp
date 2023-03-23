@@ -11,6 +11,11 @@ import org.springframework.http.HttpStatus;
 import work.sam.expensesApp.exception.ExpenseException;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "expenses")
@@ -30,14 +35,15 @@ public class Expense {
     @PositiveOrZero
     private BigDecimal amount;
 
-    @Size(min = 1, max = 255)
-    private String description;
+    @OneToMany(mappedBy = "expense", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Description> description = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    public Expense(BigDecimal amount, String description, User user) {
+
+    public Expense(BigDecimal amount, List<Description> description, User user) {
         this.amount = amount;
         this.description = description;
         this.user = user;
@@ -50,10 +56,5 @@ public class Expense {
         this.amount = amount;
     }
 
-    public void setDescriptionWithValidation(String description) {
-        if (description == null || description.isBlank() || description.isEmpty() || description.length() == 0) {
-            throw new ExpenseException("The description must be filled", HttpStatus.BAD_REQUEST);
-        }
-        this.description = description;
-    }
+
 }

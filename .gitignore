@@ -6,6 +6,7 @@
 /out-tsc
 /bazel-out
 
+
 # Node
 /node_modules
 npm-debug.log
@@ -19,6 +20,7 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+*.iml
 
 # Visual Studio Code
 .vscode/*
@@ -44,3 +46,4 @@ Thumbs.db
 # file: ~/.gitignore_global
 .DS_Store
 .idea
+*.iml

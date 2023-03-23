@@ -9,6 +9,7 @@ import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.service.ExpenseService;
 import work.sam.expensesApp.service.UserService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -22,10 +23,20 @@ public class ExpenseController {
         this.userService = userService;
     }
 
+    //Controller retournant les dépenses par userId
     @GetMapping("/{userId}")
     public ResponseEntity<List<Expense>> getExpensesByUserId(@PathVariable Long userId) {
         userService.getUserById(userId);
         List<Expense> expenses = expenseService.getExpensesByUserId(userId);
         return ResponseEntity.ok(expenses);
+    }
+
+    //Controller pour retourner toutes les dépenses
+    //Format BigDécimal au lieu de List
+    @GetMapping("/total/{userId}")
+    public ResponseEntity<BigDecimal> getSumExpensesByUserId(@PathVariable Long userId) {
+        userService.getUserById(userId);
+        BigDecimal totalExpenses = expenseService.getTotalExpensesByUserId(userId);
+        return ResponseEntity.ok(totalExpenses);
     }
 }

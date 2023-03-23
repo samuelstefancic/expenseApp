@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Ajout méthodes UserService, ajout méthode UserRepository, ajout gestion des exceptions">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/GlobalExceptionHandler.java" afterDir="false" />
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Ajout méthodes Service, Repository avec les vérifications, création du GlobalExceptionHandler, mise à jour Expense et User avec bigDécimal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/ExpenseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/ExpenseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/ExpenseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/ExpenseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +101,7 @@
       <workItem from="1679421487979" duration="86000" />
       <workItem from="1679421588325" duration="407000" />
       <workItem from="1679422324948" duration="307000" />
-      <workItem from="1679490757691" duration="16785000" />
+      <workItem from="1679490757691" duration="19507000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -129,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679499187602</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajout méthodes Service, Repository avec les vérifications, création du GlobalExceptionHandler, mise à jour Expense et User avec bigDécimal">
+      <created>1679508380320</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679508380320</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +153,7 @@
     <MESSAGE value="Ajout dépendances" />
     <MESSAGE value="Correction gitignore" />
     <MESSAGE value="Ajout méthodes UserService, ajout méthode UserRepository, ajout gestion des exceptions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout méthodes UserService, ajout méthode UserRepository, ajout gestion des exceptions" />
+    <MESSAGE value="Ajout méthodes Service, Repository avec les vérifications, création du GlobalExceptionHandler, mise à jour Expense et User avec bigDécimal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout méthodes Service, Repository avec les vérifications, création du GlobalExceptionHandler, mise à jour Expense et User avec bigDécimal" />
   </component>
 </project>

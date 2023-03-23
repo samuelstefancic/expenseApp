@@ -58,7 +58,7 @@ public class ExpenseService {
         return expenseRepository.save(existingExpense);
     }
 
-    public void deleteExpense(Long id) {
+    public void deleteExpenseById(Long id) {
         if (!expenseRepository.existsById(id)) {
             throw new ExpenseException("Expense with ID : " + id + " not found", HttpStatus.NOT_FOUND);
         }

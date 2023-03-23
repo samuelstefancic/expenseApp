@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Ajout méthodes CRUD UserController + début des méthodes controller ExpenseController">
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Correction rapide de logique pour le controller Expense, à savoir retourner BigDecimal au lieu d'une liste">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/ExpensesAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/ExpensesAppApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +70,39 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.ExpensesAppApplication">
+  <component name="RunManager" selected="JUnit.ExpensesAppApplicationTests.testAddUserWithExpenses">
+    <configuration name="ExpensesAppApplicationTests.testAddUserWithExpenses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExpensesApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="work.sam.expensesApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="work.sam.expensesApp" />
+      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.ExpensesAppApplicationTests" />
+      <option name="METHOD_NAME" value="testAddUserWithExpenses" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExpensesAppApplicationTests.testCreateUserAddExpenses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExpensesApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="work.sam.expensesApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="work.sam.expensesApp" />
+      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.ExpensesAppApplicationTests" />
+      <option name="METHOD_NAME" value="testCreateUserAddExpenses" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -88,6 +123,12 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ExpensesAppApplicationTests.testAddUserWithExpenses" />
+        <item itemvalue="JUnit.ExpensesAppApplicationTests.testCreateUserAddExpenses" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,7 +141,7 @@
       <workItem from="1679421487979" duration="86000" />
       <workItem from="1679421588325" duration="407000" />
       <workItem from="1679422324948" duration="307000" />
-      <workItem from="1679490757691" duration="21124000" />
+      <workItem from="1679490757691" duration="24995000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -137,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679562321119</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Correction rapide de logique pour le controller Expense, à savoir retourner BigDecimal au lieu d'une liste">
+      <created>1679563846580</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679563846580</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +209,7 @@
     <MESSAGE value="Ajout méthodes UserService, ajout méthode UserRepository, ajout gestion des exceptions" />
     <MESSAGE value="Ajout méthodes Service, Repository avec les vérifications, création du GlobalExceptionHandler, mise à jour Expense et User avec bigDécimal" />
     <MESSAGE value="Ajout méthodes CRUD UserController + début des méthodes controller ExpenseController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout méthodes CRUD UserController + début des méthodes controller ExpenseController" />
+    <MESSAGE value="Correction rapide de logique pour le controller Expense, à savoir retourner BigDecimal au lieu d'une liste" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correction rapide de logique pour le controller Expense, à savoir retourner BigDecimal au lieu d'une liste" />
   </component>
 </project>

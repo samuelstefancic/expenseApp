@@ -1,6 +1,7 @@
 package work.sam.expensesApp.mapper;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import work.sam.expensesApp.DTO.ExpenseDTO;
 import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.exception.MappingException;
@@ -8,7 +9,7 @@ import work.sam.expensesApp.exception.MappingException;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Component
 public class ExpenseMapper {
 
     public static ExpenseDTO toDTO(Expense expense) {

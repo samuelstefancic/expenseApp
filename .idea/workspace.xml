@@ -75,7 +75,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.TestGlobal.createUserTest">
+  <component name="RunManager" selected="Spring Boot.ExpensesAppApplication">
     <configuration name="ExpensesAppApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExpensesApp" />
       <extension name="coverage">

@@ -1,6 +1,7 @@
 package work.sam.expensesApp.mapper;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import work.sam.expensesApp.DTO.AccountDTO;
 import work.sam.expensesApp.entity.Account;
@@ -8,7 +9,7 @@ import work.sam.expensesApp.exception.MappingException;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Component
 public class AccountMapper {
 
     public static AccountDTO toDTO(Account account) {

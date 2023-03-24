@@ -3,6 +3,7 @@ package work.sam.expensesApp.DTO;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
@@ -13,7 +14,9 @@ public class UserDTO {
     private String lastname;
     private Integer age;
     private String location;
-    private Double income;
+    private BigDecimal income;
     private List<ExpenseDTO> expenses;
     private List<AccountDTO> accounts;
+
+
 }

@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Ajout DTO, ajout tests, modification userService pour une implémentation plus simple à gérer">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/MappingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/mapper/AccountMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/mapper/CategoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/mapper/ExpenseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler&#10;Avec les annotations, ça va forcément mieux marcher !">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/DTOTest/UserDTOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/UserDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +195,7 @@
       <workItem from="1679591308194" duration="6963000" />
       <workItem from="1679603798631" duration="1727000" />
       <workItem from="1679605650856" duration="2105000" />
-      <workItem from="1679647751602" duration="14661000" />
+      <workItem from="1679647751602" duration="18020000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -272,7 +267,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679660522144</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler">
+      <created>1679679859785</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679679859785</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler&#10;Avec les annotations, ça va forcément mieux marcher !">
+      <created>1679680033123</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679680033123</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +310,8 @@
     <MESSAGE value="Ajout tests et modification Controller" />
     <MESSAGE value="Update .gitignore" />
     <MESSAGE value="Ajout DTO, ajout tests, modification userService pour une implémentation plus simple à gérer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout DTO, ajout tests, modification userService pour une implémentation plus simple à gérer" />
+    <MESSAGE value="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler" />
+    <MESSAGE value="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler&#10;Avec les annotations, ça va forcément mieux marcher !" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler&#10;Avec les annotations, ça va forcément mieux marcher !" />
   </component>
 </project>

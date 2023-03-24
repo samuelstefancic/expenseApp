@@ -3,13 +3,12 @@ package work.sam.expensesApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import work.sam.expensesApp.entity.Description;
 import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.entity.User;
 import work.sam.expensesApp.service.ExpenseService;
-import work.sam.expensesApp.service.UserService;
+import work.sam.expensesApp.service.UserServiceImpl;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -22,14 +21,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class UserControllerTest {
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
     @Autowired
     private ExpenseService expenseService;
     @Test
     public void createUser() {
         User user2 = new User("Florine", "Martin", 25, "Pandora", BigDecimal.valueOf(75000));
-        userService.createUser(user2);
-        userService.getUserById(user2.getId());
+        userServiceImpl.createUser(user2);
+        userServiceImpl.getUserById(user2.getId());
         assertNotNull(user2);
         Description description1 = new Description("Achat shiva");
         Description description2 = new Description("Achat poutre");

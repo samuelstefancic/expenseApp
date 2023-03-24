@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -25,8 +26,8 @@ import java.util.List;
 public class Expense {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "generateur_expenses")
-    @SequenceGenerator(name = "generateur_expenses", sequenceName = "sequence_expenses", initialValue = 50,
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "generator_expenses")
+    @SequenceGenerator(name = "generator_expenses", sequenceName = "sequence_expenses", initialValue = 50,
     allocationSize = 1)
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
@@ -42,6 +43,14 @@ public class Expense {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = true)
+    private Category category;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_id", nullable = true)
+    private Account account;
+
 
     public Expense(BigDecimal amount, List<Description> description, User user) {
         this.amount = amount;
@@ -54,6 +63,9 @@ public class Expense {
             throw new ExpenseException("The amount must be positive", HttpStatus.BAD_REQUEST);
         }
         this.amount = amount;
+    }
+    public List<Description> getDescription() {
+        return Collections.unmodifiableList(description);
     }
 
 

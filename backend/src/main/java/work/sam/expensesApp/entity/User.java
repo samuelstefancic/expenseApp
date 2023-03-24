@@ -40,6 +40,10 @@ public class User {
     @Valid
     private List<Expense> expenses = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @Valid
+    private List<Account> accounts = new ArrayList<>();
+
     public User(String firstName, String lastName, int age, String location, BigDecimal income, List<Expense> expenses) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -64,6 +68,16 @@ public class User {
     public void removeExpense(Expense expense) {
         expenses.remove(expense);
         expense.setUser(null);
+    }
+
+    public void addAccount(Account account) {
+        accounts.add(account);
+        account.setUser(this);
+    }
+
+    public void removeAccount(Account account) {
+        accounts.remove(account);
+        account.setUser(null);
     }
 
 }

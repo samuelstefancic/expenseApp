@@ -1,26 +1,19 @@
 package work.sam.expensesApp;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit4.SpringRunner;
 import work.sam.expensesApp.entity.Description;
 import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.entity.User;
 
-import work.sam.expensesApp.repository.UserRepository;
 import work.sam.expensesApp.service.ExpenseService;
-import work.sam.expensesApp.service.UserService;
+import work.sam.expensesApp.service.UserServiceImpl;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,14 +22,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ExpensesAppApplicationTests {
 	@Autowired
-	private UserService userService;
+	private UserServiceImpl userServiceImpl;
 
 	@Autowired
 	private ExpenseService expenseService;
 
 
-	public void ExpensesAppApplicationTests(UserService userService, ExpenseService expenseService) {
-		this.userService = userService;
+	public void ExpensesAppApplicationTests(UserServiceImpl userServiceImpl, ExpenseService expenseService) {
+		this.userServiceImpl = userServiceImpl;
 		this.expenseService = expenseService;
 	}
 /*
@@ -47,8 +40,8 @@ class ExpensesAppApplicationTests {
 	@Test
 	public void createUser2() {
 		User user3 = new User("DZADSADA", "Martin", 25, "Pandora", BigDecimal.valueOf(75000));
-		userService.createUser(user3);
-		userService.getUserById(user3.getId());
+		userServiceImpl.createUser(user3);
+		userServiceImpl.getUserById(user3.getId());
 		assertNotNull(user3);
 		Description description1 = new Description("Achat shiva");
 		Description description2 = new Description("Achat poutre");
@@ -81,8 +74,8 @@ class ExpensesAppApplicationTests {
 	@Test
 	public void createUser() {
 		User user2 = new User("Florine", "Martin", 25, "Pandora", BigDecimal.valueOf(75000));
-		userService.createUser(user2);
-		userService.getUserById(user2.getId());
+		userServiceImpl.createUser(user2);
+		userServiceImpl.getUserById(user2.getId());
 		assertNotNull(user2);
 	}
 

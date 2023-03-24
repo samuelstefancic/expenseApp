@@ -7,7 +7,7 @@ import work.sam.expensesApp.entity.Description;
 import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.entity.User;
 import work.sam.expensesApp.service.ExpenseService;
-import work.sam.expensesApp.service.UserService;
+import work.sam.expensesApp.service.UserServiceImpl;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -18,14 +18,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 public class TestGlobal {
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
     @Autowired
     private ExpenseService expenseService;
     @Test
     public void createUserTest() {
         User user5 = new User("Samuel", "Martin", 25, "Pandora", BigDecimal.valueOf(75000));
-        userService.createUser(user5);
-        userService.getUserById(user5.getId());
+        userServiceImpl.createUser(user5);
+        userServiceImpl.getUserById(user5.getId());
         assertNotNull(user5);
         Description description1 = new Description("Achat shiva");
         Description description2 = new Description("Achat poutre");

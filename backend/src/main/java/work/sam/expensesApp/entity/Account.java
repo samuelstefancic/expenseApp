@@ -50,4 +50,12 @@ public class Account {
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Category> categories = new ArrayList<>();
+
+    public Account(String accountName, String password, User user, List<Expense> expenses, List<Category> categories) {
+        this.accountName = accountName;
+        this.password = password;
+        this.user = user;
+        this.expenses = expenses;
+        this.categories = categories;
+    }
 }

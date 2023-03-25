@@ -2,17 +2,14 @@ package work.sam.expensesApp.exception;
 
 import org.springframework.http.HttpStatus;
 
-public class MappingException extends RuntimeException{
+public class AccountException extends RuntimeException {
 
     private final HttpStatus httpStatus;
 
-    public MappingException(String message, HttpStatus httpStatus) {
+    public AccountException(String message, HttpStatus httpStatus) {
         super(message);
         this.httpStatus = httpStatus;
     }
 
-
-    public HttpStatus getHttpStatus() {
-        return httpStatus;
-    }
+    public HttpStatus getHttpStatus() {return httpStatus;}
 }

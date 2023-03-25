@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler&#10;Avec les annotations, ça va forcément mieux marcher !">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/entitiesTest/fullTestEntityCreation.java" afterDir="false" />
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Ajout constructor Account et modification tests">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/AccountException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/AccountRespository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/DescriptionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/ExpensesAppApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/ExpensesAppApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/UserControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/UserControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +198,7 @@
       <workItem from="1679603798631" duration="1727000" />
       <workItem from="1679605650856" duration="2105000" />
       <workItem from="1679647751602" duration="18020000" />
-      <workItem from="1679742250096" duration="3431000" />
+      <workItem from="1679742250096" duration="5992000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -283,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679680033123</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Ajout constructor Account et modification tests">
+      <created>1679759217106</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679759217106</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +322,7 @@
     <MESSAGE value="Ajout DTO, ajout tests, modification userService pour une implémentation plus simple à gérer" />
     <MESSAGE value="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler" />
     <MESSAGE value="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler&#10;Avec les annotations, ça va forcément mieux marcher !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update gitignore, ajout mappers Account, Category, Expense, ajout Mapping Exception, modification UserService et UserServiceImpl.java, update GlobalExceptionHandler&#10;Avec les annotations, ça va forcément mieux marcher !" />
+    <MESSAGE value="Ajout constructor Account et modification tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout constructor Account et modification tests" />
   </component>
 </project>

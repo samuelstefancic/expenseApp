@@ -18,12 +18,17 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(DescriptionException.class)
-    public ResponseEntity<String> handleDescriptionException(UserException e) {
+    public ResponseEntity<String> handleDescriptionException(DescriptionException e) {
         return new ResponseEntity<>(e.getMessage(), e.getHttpStatus());
     }
 
     @ExceptionHandler(MappingException.class)
-    public ResponseEntity<String> handleMappingException(UserException e) {
+    public ResponseEntity<String> handleMappingException(MappingException e) {
+        return new ResponseEntity<>(e.getMessage(), e.getHttpStatus());
+    }
+
+    @ExceptionHandler(AccountException.class)
+    public ResponseEntity<String> handleAccountException(AccountException e) {
         return new ResponseEntity<>(e.getMessage(), e.getHttpStatus());
     }
 }

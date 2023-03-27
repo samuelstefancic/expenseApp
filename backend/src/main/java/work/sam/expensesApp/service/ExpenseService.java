@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import work.sam.expensesApp.entity.Description;
-import work.sam.expensesApp.entity.Expense;
-import work.sam.expensesApp.entity.User;
+import work.sam.expensesApp.entity.*;
+import work.sam.expensesApp.exception.AccountException;
+import work.sam.expensesApp.exception.CategoryException;
 import work.sam.expensesApp.exception.ExpenseException;
 import work.sam.expensesApp.exception.UserException;
+import work.sam.expensesApp.repository.AccountRespository;
+import work.sam.expensesApp.repository.CategoryRepository;
 import work.sam.expensesApp.repository.ExpenseRepository;
 import work.sam.expensesApp.repository.UserRepository;
 
@@ -24,15 +26,19 @@ public class ExpenseService {
 
     private final ExpenseRepository expenseRepository;
     private final UserRepository userRepository;
-
+    private final CategoryRepository categoryRepository;
+    private final AccountRespository accountRespository;
 
 
     @Autowired
     public ExpenseService(ExpenseRepository expenseRepository,
-                          UserRepository userRepository) {
+                          UserRepository userRepository,
+                          CategoryRepository categoryRepository, AccountRespository accountRespository) {
         this.expenseRepository = expenseRepository;
         this.userRepository = userRepository;
 
+        this.categoryRepository = categoryRepository;
+        this.accountRespository = accountRespository;
     }
 
 
@@ -59,6 +65,33 @@ public class ExpenseService {
     public Expense findExpenseById(Long id) {
         return expenseRepository.findById(id)
                 .orElseThrow(() -> new ExpenseException("Expense with ID : " + id + " not found", HttpStatus.NOT_FOUND));
+    }
+
+    //Find expense by category
+    public List<Expense> findExpensesAccountByCategory(Long accountId, Long categoryId) {
+        Account account = accountRespository.findById(accountId)
+                .orElseThrow(() -> new AccountException("Account with id : " + accountId + " not found", HttpStatus.NOT_FOUND));
+        Category category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new CategoryException("Category with id ; " + categoryId + " not found", HttpStatus.NOT_FOUND));
+        return expenseRepository.findByAccountAndCategory(account, category);
+    }
+
+    public List<Expense> findExpensesByDate(Long accountId, LocalDateTime startDate, LocalDateTime endDate) {
+        Account account = accountRespository.findById(accountId)
+                .orElseThrow(() -> new AccountException("Account with id : " + accountId + " not found", HttpStatus.NOT_FOUND ));
+        return expenseRepository.findByAccountAndDateBetween(account, startDate, endDate);
+    }
+    //Sum of expenses by a category
+
+    public BigDecimal getTotalExpensesByAccountId(Long accountID) {
+        Account account = accountRespository.findById(accountID)
+                .orElseThrow(() ->
+                        new AccountException("Account not found with id " + accountID, HttpStatus.NOT_FOUND));
+        List<Expense> expenses = expenseRepository.findByAccountId(accountID);
+        if (expenses == null || expenses.isEmpty()) {
+            return BigDecimal.ZERO;
+        }
+        return expenses.stream().map(Expense::getAmount).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     //Update Expense

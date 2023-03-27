@@ -6,17 +6,24 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import work.sam.expensesApp.entity.Account;
+import work.sam.expensesApp.entity.Category;
 import work.sam.expensesApp.exception.AccountException;
 import work.sam.expensesApp.repository.AccountRespository;
+import work.sam.expensesApp.repository.CategoryRepository;
+
+import java.util.List;
 
 @Service
 public class AccountService {
 
     private final AccountRespository accountRespository;
+    private final CategoryRepository categoryRepository;
 
     @Autowired
-    public AccountService(AccountRespository accountRespository) {
+    public AccountService(AccountRespository accountRespository,
+                          CategoryRepository categoryRepository) {
         this.accountRespository = accountRespository;
+        this.categoryRepository = categoryRepository;
     }
 
     //Create the account
@@ -38,6 +45,13 @@ public class AccountService {
         return accountRespository.findById(id).orElseThrow(() ->
                 new AccountException("Account with id : " + id + " not found"
                 , HttpStatus.NOT_FOUND));
+    }
+
+    //Get every categories for the account
+
+    public List<Category> getAllCategoriesForAccount(Long id) {
+        Account account = getAccountById(id);
+        return categoryRepository.findByAccount(account);
     }
 
 

@@ -31,4 +31,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleAccountException(AccountException e) {
         return new ResponseEntity<>(e.getMessage(), e.getHttpStatus());
     }
+
+    @ExceptionHandler(CategoryException.class)
+    public ResponseEntity<String> handleCategoryException(CategoryException e) {
+        return new ResponseEntity<>(e.getMessage(), e.getHttpStatus());
+    }
 }

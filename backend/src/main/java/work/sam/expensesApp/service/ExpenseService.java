@@ -11,7 +11,7 @@ import work.sam.expensesApp.exception.AccountException;
 import work.sam.expensesApp.exception.CategoryException;
 import work.sam.expensesApp.exception.ExpenseException;
 import work.sam.expensesApp.exception.UserException;
-import work.sam.expensesApp.repository.AccountRespository;
+import work.sam.expensesApp.repository.AccountRepository;
 import work.sam.expensesApp.repository.CategoryRepository;
 import work.sam.expensesApp.repository.ExpenseRepository;
 import work.sam.expensesApp.repository.UserRepository;
@@ -27,18 +27,18 @@ public class ExpenseService {
     private final ExpenseRepository expenseRepository;
     private final UserRepository userRepository;
     private final CategoryRepository categoryRepository;
-    private final AccountRespository accountRespository;
+    private final AccountRepository accountRepository;
 
 
     @Autowired
     public ExpenseService(ExpenseRepository expenseRepository,
                           UserRepository userRepository,
-                          CategoryRepository categoryRepository, AccountRespository accountRespository) {
+                          CategoryRepository categoryRepository, AccountRepository accountRepository) {
         this.expenseRepository = expenseRepository;
         this.userRepository = userRepository;
 
         this.categoryRepository = categoryRepository;
-        this.accountRespository = accountRespository;
+        this.accountRepository = accountRepository;
     }
 
 
@@ -69,7 +69,7 @@ public class ExpenseService {
 
     //Find expense by category
     public List<Expense> findExpensesAccountByCategory(Long accountId, Long categoryId) {
-        Account account = accountRespository.findById(accountId)
+        Account account = accountRepository.findById(accountId)
                 .orElseThrow(() -> new AccountException("Account with id : " + accountId + " not found", HttpStatus.NOT_FOUND));
         Category category = categoryRepository.findById(categoryId)
                 .orElseThrow(() -> new CategoryException("Category with id ; " + categoryId + " not found", HttpStatus.NOT_FOUND));
@@ -77,14 +77,14 @@ public class ExpenseService {
     }
 
     public List<Expense> findExpensesByDate(Long accountId, LocalDateTime startDate, LocalDateTime endDate) {
-        Account account = accountRespository.findById(accountId)
+        Account account = accountRepository.findById(accountId)
                 .orElseThrow(() -> new AccountException("Account with id : " + accountId + " not found", HttpStatus.NOT_FOUND ));
         return expenseRepository.findByAccountAndDateBetween(account, startDate, endDate);
     }
     //Sum of expenses by a category
 
     public BigDecimal getTotalExpensesByAccountId(Long accountID) {
-        Account account = accountRespository.findById(accountID)
+        Account account = accountRepository.findById(accountID)
                 .orElseThrow(() ->
                         new AccountException("Account not found with id " + accountID, HttpStatus.NOT_FOUND));
         List<Expense> expenses = expenseRepository.findByAccountId(accountID);

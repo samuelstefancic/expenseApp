@@ -1,5 +1,6 @@
 package work.sam.expensesApp.service;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -9,6 +10,7 @@ import work.sam.expensesApp.DTO.ExpenseDTO;
 import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.entity.User;
 import work.sam.expensesApp.exception.UserException;
+import work.sam.expensesApp.exception.UserNotFoundException;
 import work.sam.expensesApp.mapper.ExpenseMapper;
 import work.sam.expensesApp.repository.ExpenseRepository;
 import work.sam.expensesApp.repository.UserRepository;
@@ -61,6 +63,7 @@ public class UserServiceImpl implements UserService {
     }
 
     // Update
+    @Transactional
     public User updateUser(Long id, User updatedUser) {
         User user = userRepository.findById(id).orElseThrow(() -> new UserException("The user with id " + id + " does not exist", HttpStatus.NOT_FOUND));
 
@@ -117,23 +120,15 @@ public class UserServiceImpl implements UserService {
         Optional<User> userOptional = userRepository.findById(userId);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            Expense expense = new Expense(); // Create a new expense entity
-            // Set the expense properties using the expenseDTO
+            Expense expense = new Expense();
             expense.setAmount(expenseDTO.getAmount() != null ? expenseDTO.getAmount() : BigDecimal.ZERO);
             expense.setUser(user);
-            // Optionally, add logic for handling categories and accounts
-
-            // Save the expense to the database
             expenseRepository.save(expense);
-
-            // Update the user's expenses list
             user.addExpense(expense);
             userRepository.save(user);
-
-            // Convert the saved expense entity back to a DTO and return it
             return expenseMapper.toDTO(expense);
         } else {
-            throw new RuntimeException("User not found"); // Replace with a custom exception and handle it appropriately
+            throw new UserNotFoundException("User not found", HttpStatus.NOT_FOUND);
         }
     }
     }

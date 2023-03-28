@@ -36,4 +36,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleCategoryException(CategoryException e) {
         return new ResponseEntity<>(e.getMessage(), e.getHttpStatus());
     }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFoundException(CategoryException e) {
+        return new ResponseEntity<>(e.getMessage(), e.getHttpStatus());
+    }
 }

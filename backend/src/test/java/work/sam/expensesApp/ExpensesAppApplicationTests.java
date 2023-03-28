@@ -39,14 +39,17 @@ class ExpensesAppApplicationTests {
 
 	@Test
 	public void createUser2() {
-		User user3 = new User("DZADSADA", "Martin", 25, "Pandora", BigDecimal.valueOf(75000));
+		User user3 = new User("DZADSADA", "test", 25, "Pandora", BigDecimal.valueOf(75000));
 		userServiceImpl.createUser(user3);
 		userServiceImpl.getUserById(user3.getId());
 		assertNotNull(user3);
+
+		
 		Description description1 = new Description("Achat shiva");
 		Description description2 = new Description("Achat poutre");
 		List<Description> descriptions1 = Collections.singletonList(description1);
 		List<Description> descriptions2 = Collections.singletonList(description2);
+
 		Expense expense1 = new Expense(BigDecimal.valueOf(20000),descriptions1,  user3);
 		Expense expense2 = new Expense(BigDecimal.valueOf(30000), descriptions2, user3);
 		expenseService.createExpense(expense1);

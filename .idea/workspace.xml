@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Amélioration logique du code, ajout méthodes plus poussées">
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Rename AccountRespository TO AccountRepository&#10;New exceptions added, complete DescriptionRepository, modified UserServiceImpl.java with a new Exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/UserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/exception/UserException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/AccountRespository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/DescriptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/DescriptionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/DescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/DescriptionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/ExpensesAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/ExpensesAppApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/TestGlobal.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/TestGlobal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/ExpensesAppApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/ExpensesAppApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +71,8 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.fullTestEntityCreation.createEntity">
-    <configuration name="AccountDTOTest.testAccountDTOProperties" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestGlobal.createUser2">
+    <configuration name="AccountDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExpensesApp" />
       <extension name="coverage">
         <pattern>
@@ -86,70 +82,70 @@
       </extension>
       <option name="PACKAGE_NAME" value="work.sam.expensesApp.DTOTest" />
       <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.DTOTest.AccountDTOTest" />
-      <option name="METHOD_NAME" value="testAccountDTOProperties" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CategoryDTOTest.testCategoryDTOProperties" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ExpensesApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="work.sam.expensesApp.DTOTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="work.sam.expensesApp.DTOTest" />
-      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.DTOTest.CategoryDTOTest" />
-      <option name="METHOD_NAME" value="testCategoryDTOProperties" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ExpenseDTOTest.testExpenseDTOProperties" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ExpensesApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="work.sam.expensesApp.DTOTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="work.sam.expensesApp.DTOTest" />
-      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.DTOTest.ExpenseDTOTest" />
-      <option name="METHOD_NAME" value="testExpenseDTOProperties" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ExpensesApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="work.sam.expensesApp.DTOTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="work.sam.expensesApp.DTOTest" />
-      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.DTOTest.UserDTOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="fullTestEntityCreation.createEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExpensesAppApplicationTests.createUser2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExpensesApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="work.sam.expensesApp.entitiesTest.*" />
+          <option name="PATTERN" value="work.sam.expensesApp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="work.sam.expensesApp.entitiesTest" />
-      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.entitiesTest.fullTestEntityCreation" />
-      <option name="METHOD_NAME" value="createEntity" />
+      <option name="PACKAGE_NAME" value="work.sam.expensesApp" />
+      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.ExpensesAppApplicationTests" />
+      <option name="METHOD_NAME" value="createUser2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGlobal.createExpenseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExpensesApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="work.sam.expensesApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="work.sam.expensesApp" />
+      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.TestGlobal" />
+      <option name="METHOD_NAME" value="createExpenseTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGlobal.createUser2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExpensesApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="work.sam.expensesApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="work.sam.expensesApp" />
+      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.TestGlobal" />
+      <option name="METHOD_NAME" value="createUser2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGlobal.createUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ExpensesApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="work.sam.expensesApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="work.sam.expensesApp" />
+      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.TestGlobal" />
+      <option name="METHOD_NAME" value="createUserTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.fullTestEntityCreation.createEntity" />
-        <item itemvalue="JUnit.UserDTOTest" />
-        <item itemvalue="JUnit.ExpenseDTOTest.testExpenseDTOProperties" />
-        <item itemvalue="JUnit.CategoryDTOTest.testCategoryDTOProperties" />
-        <item itemvalue="JUnit.AccountDTOTest.testAccountDTOProperties" />
+        <item itemvalue="JUnit.TestGlobal.createUser2" />
+        <item itemvalue="JUnit.TestGlobal.createUserTest" />
+        <item itemvalue="JUnit.ExpensesAppApplicationTests.createUser2" />
+        <item itemvalue="JUnit.TestGlobal.createExpenseTest" />
+        <item itemvalue="JUnit.AccountDTOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +197,7 @@
       <workItem from="1679603798631" duration="1727000" />
       <workItem from="1679605650856" duration="2105000" />
       <workItem from="1679647751602" duration="18020000" />
-      <workItem from="1679742250096" duration="20009000" />
+      <workItem from="1679742250096" duration="27761000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -315,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679937301060</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Rename AccountRespository TO AccountRepository&#10;New exceptions added, complete DescriptionRepository, modified UserServiceImpl.java with a new Exception">
+      <created>1679997260546</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1679997260546</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,6 +353,7 @@
     <MESSAGE value="Complétion Account, repository et ajout GlobalExceptionHandler" />
     <MESSAGE value="Ajout gestion de catégories + ajout liste de toutes les catégories d'un compte" />
     <MESSAGE value="Amélioration logique du code, ajout méthodes plus poussées" />
-    <option name="LAST_COMMIT_MESSAGE" value="Amélioration logique du code, ajout méthodes plus poussées" />
+    <MESSAGE value="Rename AccountRespository TO AccountRepository&#10;New exceptions added, complete DescriptionRepository, modified UserServiceImpl.java with a new Exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename AccountRespository TO AccountRepository&#10;New exceptions added, complete DescriptionRepository, modified UserServiceImpl.java with a new Exception" />
   </component>
 </project>

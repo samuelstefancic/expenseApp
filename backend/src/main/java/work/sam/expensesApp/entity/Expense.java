@@ -7,6 +7,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
+import org.springframework.cglib.core.Local;
 import org.springframework.http.HttpStatus;
 import work.sam.expensesApp.exception.ExpenseException;
 
@@ -36,6 +38,9 @@ public class Expense {
     @PositiveOrZero
     private BigDecimal amount;
 
+    @Column(name = "date", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime date;
+
     @OneToMany(mappedBy = "expense", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Description> description = new ArrayList<>();
 
@@ -56,6 +61,15 @@ public class Expense {
         this.amount = amount;
         this.description = description;
         this.user = user;
+        this.date = LocalDateTime.now();
+    }
+
+    public Expense(BigDecimal amount, LocalDateTime date) {
+        this.amount = amount;
+        this.date = date;
+    }
+    public Expense(BigDecimal amount) {
+        this.amount = amount;
     }
 
     public void setAmountWithValidation(BigDecimal amount) {
@@ -68,5 +82,9 @@ public class Expense {
         return Collections.unmodifiableList(description);
     }
 
+    @PrePersist
+    protected void onCreate() {
+        date = LocalDateTime.now();
+    }
 
 }

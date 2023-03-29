@@ -5,12 +5,14 @@
 /tmp
 /out-tsc
 /bazel-out
+*.class
 
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+*.class
 
 # IDEs and editors
 .idea/
@@ -21,6 +23,7 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 *.iml
+*.class
 
 # Visual Studio Code
 .vscode/*
@@ -29,6 +32,7 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+*.class
 
 # Miscellaneous
 /.angular/cache
@@ -38,11 +42,12 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+*.class
 
 # System files
 .DS_Store
 Thumbs.db
-
+*.class
 # file: ~/.gitignore_global
 .DS_Store
 .idea
@@ -52,3 +57,4 @@ Thumbs.db
 expenseApp.iml
 /backend/target/
 /.idea/
+*.class

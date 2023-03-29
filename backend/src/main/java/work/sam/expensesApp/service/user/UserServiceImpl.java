@@ -1,4 +1,4 @@
-package work.sam.expensesApp.service;
+package work.sam.expensesApp.service.user;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolationException;
@@ -23,6 +23,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final ExpenseRepository expenseRepository;

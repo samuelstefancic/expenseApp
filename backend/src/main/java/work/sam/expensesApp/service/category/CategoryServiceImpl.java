@@ -1,20 +1,20 @@
-package work.sam.expensesApp.service;
+package work.sam.expensesApp.service.category;
 
-import jakarta.validation.ConstraintViolationException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import work.sam.expensesApp.entity.Category;
 import work.sam.expensesApp.exception.CategoryException;
 import work.sam.expensesApp.repository.CategoryRepository;
 @Service
-public class CategoryService {
+@Transactional
+public class CategoryServiceImpl implements CategoryService{
 
     private final CategoryRepository categoryRepository;
 
     @Autowired
-    public CategoryService(CategoryRepository categoryRepository) {
+    public CategoryServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 
@@ -52,7 +52,7 @@ public class CategoryService {
     //Delete
 
     public void deleteCategory(Long id) {
-        if (categoryRepository.existsById(id)) {
+        if (!categoryRepository.existsById(id)) {
             throw new CategoryException("Category with id " + id + " not found", HttpStatus.NOT_FOUND);
         }
         try {

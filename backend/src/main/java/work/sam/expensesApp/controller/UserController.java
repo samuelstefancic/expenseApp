@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import work.sam.expensesApp.entity.User;
-import work.sam.expensesApp.service.UserServiceImpl;
+import work.sam.expensesApp.service.user.UserServiceImpl;
 
 @RestController
 @RequestMapping("/api/users")

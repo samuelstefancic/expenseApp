@@ -11,6 +11,7 @@ public class AccountDTO {
     private Long id;
     private String accountName;
     private String password;
-    private List<CategoryDTO> categories;
+    private UserDTO user;
     private List<ExpenseDTO> expenses;
+    private List<CategoryDTO> categories;
 }

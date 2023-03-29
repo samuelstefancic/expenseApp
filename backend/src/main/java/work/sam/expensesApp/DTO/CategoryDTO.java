@@ -10,6 +10,6 @@ import java.util.List;
 public class CategoryDTO {
     private Long id;
     private String name;
-    private Long accountId;
+    private AccountDTO account;
     private List<ExpenseDTO> expenses;
 }

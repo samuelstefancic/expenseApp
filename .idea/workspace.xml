@@ -4,12 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Rename AccountRespository TO AccountRepository&#10;New exceptions added, complete DescriptionRepository, modified UserServiceImpl.java with a new Exception">
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Handled a few errors : date problem with a method, corrected the tests">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/DescriptionDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/account/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/category/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/description/DescriptionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/expense/ExpenseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/DTOTest/GlobalDTOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/AccountDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/AccountDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/CategoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/CategoryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/ExpenseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/ExpenseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/DTO/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/account/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/category/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/DescriptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/description/DescriptionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/ExpenseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/expense/ExpenseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/user/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/ExpensesAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/ExpensesAppApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/TestGlobal.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/TestGlobal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/ExpensesAppApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/ExpensesAppApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/entitiesTest/fullTestEntityCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/entitiesTest/fullTestEntityCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/entity/Expense.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/entity/Expense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/exception/UserException.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/exception/UserException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/repository/ExpenseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/repository/ExpenseRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/service/ExpenseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/service/ExpenseService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -45,32 +68,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ungk/OneDrive/Bureau/projetsPersos/expenseApp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;38a9bd4d41c3c80b3dc90afc150646b7&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ungk\\OneDrive\\Bureau\\projetsPersos\\expenseApp\\expense-tracker-frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "JSON-Groovy.json.groovy",
+    "database.data.extractors.current.id": "JSON-Groovy.json.groovy",
+    "last_opened_file_path": "C:/Users/ungk/OneDrive/Bureau/projetsPersos/expenseApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "38a9bd4d41c3c80b3dc90afc150646b7",
+    "ts.external.directory.path": "C:\\Users\\ungk\\OneDrive\\Bureau\\projetsPersos\\expenseApp\\expense-tracker-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="JUnit.TestGlobal.createUser2">
     <configuration name="AccountDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExpensesApp" />
@@ -197,7 +222,7 @@
       <workItem from="1679603798631" duration="1727000" />
       <workItem from="1679605650856" duration="2105000" />
       <workItem from="1679647751602" duration="18020000" />
-      <workItem from="1679742250096" duration="27761000" />
+      <workItem from="1679742250096" duration="32871000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -318,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679997260546</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Handled a few errors : date problem with a method, corrected the tests">
+      <created>1680027980462</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1680027980462</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +386,7 @@
     <MESSAGE value="Ajout gestion de catégories + ajout liste de toutes les catégories d'un compte" />
     <MESSAGE value="Amélioration logique du code, ajout méthodes plus poussées" />
     <MESSAGE value="Rename AccountRespository TO AccountRepository&#10;New exceptions added, complete DescriptionRepository, modified UserServiceImpl.java with a new Exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename AccountRespository TO AccountRepository&#10;New exceptions added, complete DescriptionRepository, modified UserServiceImpl.java with a new Exception" />
+    <MESSAGE value="Handled a few errors : date problem with a method, corrected the tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handled a few errors : date problem with a method, corrected the tests" />
   </component>
 </project>

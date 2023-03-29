@@ -1,5 +1,6 @@
-package work.sam.expensesApp.service;
+package work.sam.expensesApp.service.account;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -14,14 +15,15 @@ import work.sam.expensesApp.repository.CategoryRepository;
 import java.util.List;
 
 @Service
-public class AccountService {
+@Transactional
+public class AccountServiceImpl implements AccountService{
 
     private final AccountRepository accountRepository;
     private final CategoryRepository categoryRepository;
 
     @Autowired
-    public AccountService(AccountRepository accountRepository,
-                          CategoryRepository categoryRepository) {
+    public AccountServiceImpl(AccountRepository accountRepository,
+                              CategoryRepository categoryRepository) {
         this.accountRepository = accountRepository;
         this.categoryRepository = categoryRepository;
     }
@@ -55,7 +57,7 @@ public class AccountService {
     }
 
 
-    //Update account (soon)
+    //Update account
 
     //Update account name
     public Account updateAccountName(Long id, Account updateAccount) {

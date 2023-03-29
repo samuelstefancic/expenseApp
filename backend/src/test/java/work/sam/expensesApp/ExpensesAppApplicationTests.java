@@ -10,8 +10,8 @@ import work.sam.expensesApp.entity.Description;
 import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.entity.User;
 
-import work.sam.expensesApp.service.ExpenseService;
-import work.sam.expensesApp.service.UserServiceImpl;
+import work.sam.expensesApp.service.expense.ExpenseServiceImpl;
+import work.sam.expensesApp.service.user.UserServiceImpl;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -25,12 +25,12 @@ class ExpensesAppApplicationTests {
 	private UserServiceImpl userServiceImpl;
 
 	@Autowired
-	private ExpenseService expenseService;
+	private ExpenseServiceImpl expenseServiceImpl;
 
 
-	public void ExpensesAppApplicationTests(UserServiceImpl userServiceImpl, ExpenseService expenseService) {
+	public void ExpensesAppApplicationTests(UserServiceImpl userServiceImpl, ExpenseServiceImpl expenseServiceImpl) {
 		this.userServiceImpl = userServiceImpl;
-		this.expenseService = expenseService;
+		this.expenseServiceImpl = expenseServiceImpl;
 	}
 /*
 	@Test
@@ -44,7 +44,7 @@ class ExpensesAppApplicationTests {
 		userServiceImpl.getUserById(user3.getId());
 		assertNotNull(user3);
 
-		
+
 		Description description1 = new Description("Achat shiva");
 		Description description2 = new Description("Achat poutre");
 		List<Description> descriptions1 = Collections.singletonList(description1);
@@ -52,10 +52,10 @@ class ExpensesAppApplicationTests {
 
 		Expense expense1 = new Expense(BigDecimal.valueOf(20000),descriptions1,  user3);
 		Expense expense2 = new Expense(BigDecimal.valueOf(30000), descriptions2, user3);
-		expenseService.createExpense(expense1);
-		expenseService.createExpense(expense2);
+		expenseServiceImpl.createExpense(expense1);
+		expenseServiceImpl.createExpense(expense2);
 
-		List<Expense> expenses = expenseService.getExpensesByUserId(user3.getId());
+		List<Expense> expenses = expenseServiceImpl.getExpensesByUserId(user3.getId());
 		assertEquals(2, expenses.size());
 
 		for (Expense expense : expenses) {

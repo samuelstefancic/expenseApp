@@ -1,5 +1,6 @@
-package work.sam.expensesApp.service;
+package work.sam.expensesApp.service.expense;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ExpenseService {
+@Transactional
+public class ExpenseServiceImpl implements ExpenseService {
 
     private final ExpenseRepository expenseRepository;
     private final UserRepository userRepository;
@@ -31,9 +33,9 @@ public class ExpenseService {
 
 
     @Autowired
-    public ExpenseService(ExpenseRepository expenseRepository,
-                          UserRepository userRepository,
-                          CategoryRepository categoryRepository, AccountRepository accountRepository) {
+    public ExpenseServiceImpl(ExpenseRepository expenseRepository,
+                              UserRepository userRepository,
+                              CategoryRepository categoryRepository, AccountRepository accountRepository) {
         this.expenseRepository = expenseRepository;
         this.userRepository = userRepository;
 
@@ -83,11 +85,11 @@ public class ExpenseService {
     }
     //Sum of expenses by a category
 
-    public BigDecimal getTotalExpensesByAccountId(Long accountID) {
-        Account account = accountRepository.findById(accountID)
+    public BigDecimal getTotalExpensesByAccountId(Long accountId) {
+        Account account = accountRepository.findById(accountId)
                 .orElseThrow(() ->
-                        new AccountException("Account not found with id " + accountID, HttpStatus.NOT_FOUND));
-        List<Expense> expenses = expenseRepository.findByAccountId(accountID);
+                        new AccountException("Account not found with id " + accountId, HttpStatus.NOT_FOUND));
+        List<Expense> expenses = expenseRepository.findByAccountId(accountId);
         if (expenses == null || expenses.isEmpty()) {
             return BigDecimal.ZERO;
         }

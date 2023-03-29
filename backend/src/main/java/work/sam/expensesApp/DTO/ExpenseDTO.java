@@ -5,6 +5,7 @@ import lombok.Setter;
 import work.sam.expensesApp.entity.Description;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -12,7 +13,9 @@ import java.util.List;
 public class ExpenseDTO {
     private Long id;
     private BigDecimal amount;
-    private List<Description> descriptions;
-    private Long categoryId;
-    private Long accountId;
+    private LocalDateTime date;
+    private List<DescriptionDTO> descriptions;
+    private UserDTO user;
+    private CategoryDTO category;
+    private AccountDTO account;
 }

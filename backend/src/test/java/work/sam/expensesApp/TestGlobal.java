@@ -4,13 +4,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import work.sam.expensesApp.entity.*;
-import work.sam.expensesApp.repository.AccountRepository;
-import work.sam.expensesApp.repository.DescriptionRepository;
 import work.sam.expensesApp.repository.UserRepository;
-import work.sam.expensesApp.service.*;
+import work.sam.expensesApp.service.account.AccountServiceImpl;
+import work.sam.expensesApp.service.category.CategoryServiceImpl;
+import work.sam.expensesApp.service.description.DescriptionServiceImpl;
+import work.sam.expensesApp.service.expense.ExpenseServiceImpl;
+import work.sam.expensesApp.service.user.UserServiceImpl;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,15 +23,15 @@ public class TestGlobal {
     @Autowired
     private UserServiceImpl userServiceImpl;
     @Autowired
-    private ExpenseService expenseService;
+    private ExpenseServiceImpl expenseServiceImpl;
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private DescriptionService descriptionService;
+    private DescriptionServiceImpl descriptionServiceImpl;
     @Autowired
-    private AccountService accountService;
+    private AccountServiceImpl accountServiceImpl;
     @Autowired
-    private CategoryService categoryService;
+    private CategoryServiceImpl categoryServiceImpl;
 
     @Test
     public void createUser2() {
@@ -40,12 +41,12 @@ public class TestGlobal {
         assertNotNull(user3);
 
         Account account1 = new Account("Savings Account", "password123", user3, new ArrayList<>(), new ArrayList<>());
-        accountService.createAccount(account1);
+        accountServiceImpl.createAccount(account1);
 
         Category category1 = new Category();
         category1.setName("Shopping");
         category1.setAccount(account1);
-        categoryService.createCategory(category1);
+        categoryServiceImpl.createCategory(category1);
 
         Description description1 = new Description("Achat shiva");
         Description description2 = new Description("Achat poutre");
@@ -59,10 +60,10 @@ public class TestGlobal {
         expense2.setCategory(category1);
         expense2.setAccount(account1);
 
-        expenseService.createExpense(expense1);
-        expenseService.createExpense(expense2);
+        expenseServiceImpl.createExpense(expense1);
+        expenseServiceImpl.createExpense(expense2);
 
-        List<Expense> expenses = expenseService.getExpensesByUserId(user3.getId());
+        List<Expense> expenses = expenseServiceImpl.getExpensesByUserId(user3.getId());
         assertEquals(2, expenses.size());
 
         for (Expense expense : expenses) {
@@ -85,8 +86,8 @@ public class TestGlobal {
     public void createExpenseTest() {
         Expense expense1 = new Expense(BigDecimal.valueOf(20000));
         Expense expense2 = new Expense(BigDecimal.valueOf(30000));
-        expenseService.createExpense(expense1);
-        expenseService.createExpense(expense2);
+        expenseServiceImpl.createExpense(expense1);
+        expenseServiceImpl.createExpense(expense2);
     }
 
 

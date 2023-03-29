@@ -1,7 +1,9 @@
-package work.sam.expensesApp.service;
+package work.sam.expensesApp.service.user;
 
+import org.springframework.stereotype.Service;
 import work.sam.expensesApp.DTO.ExpenseDTO;
 import work.sam.expensesApp.entity.User;
+@Service
 public interface UserService {
     User createUser(User user);
     User getUserById(Long id);

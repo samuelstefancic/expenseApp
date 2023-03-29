@@ -17,11 +17,11 @@ public class CategoryMapper {
         CategoryDTO dto = new CategoryDTO();
         dto.setId(category.getId());
         dto.setName(category.getName());
-        dto.setAccountId(category.getAccount() != null ? category.getAccount().getId() : null);
+        dto.setAccount(category.getAccount() != null ? AccountMapper.toDTO(category.getAccount()) : null);
         dto.setExpenses(ExpenseMapper.toDTOList(category.getExpenses()));
         return dto;
     }
-
+//        dto.setAccount(expense.getAccount() != null ? AccountMapper.toDTO(expense.getAccount()) : null);
     public static List<CategoryDTO> toDTOList(List<Category> categories) {
         return categories.stream().map(CategoryMapper::toDTO).collect(Collectors.toList());
     }

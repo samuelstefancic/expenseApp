@@ -2,6 +2,7 @@ package work.sam.expensesApp.mapper;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import work.sam.expensesApp.DTO.DescriptionDTO;
 import work.sam.expensesApp.DTO.ExpenseDTO;
 import work.sam.expensesApp.entity.Expense;
 import work.sam.expensesApp.exception.MappingException;
@@ -19,9 +20,13 @@ public class ExpenseMapper {
         ExpenseDTO dto = new ExpenseDTO();
         dto.setId(expense.getId());
         dto.setAmount(expense.getAmount() != null ? expense.getAmount() : BigDecimal.ZERO);
-        dto.setDescriptions(expense.getDescription());
-        dto.setCategoryId(expense.getCategory() != null ? expense.getCategory().getId() : null);
-        dto.setAccountId(expense.getAccount() != null ? expense.getAccount().getId() : null);
+        List<DescriptionDTO> descriptionDTOS = expense.getDescription()
+                        .stream()
+                                .map(DescriptionMapper::toDTO)
+                                        .collect(Collectors.toList());
+        dto.setDescriptions(descriptionDTOS);
+        dto.setCategory(expense.getCategory() != null ? CategoryMapper.toDTO(expense.getCategory()) : null);
+        dto.setAccount(expense.getAccount() != null ? AccountMapper.toDTO(expense.getAccount()) : null);
         return dto;
     }
     public static List<ExpenseDTO> toDTOList(List<Expense> expenses) {

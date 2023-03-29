@@ -13,7 +13,7 @@
 npm-debug.log
 yarn-error.log
 *.class
-
+workspace.xml
 # IDEs and editors
 .idea/
 .project

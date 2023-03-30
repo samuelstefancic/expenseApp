@@ -8,6 +8,7 @@ import work.sam.expensesApp.entity.Expense;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, Long> {
@@ -18,4 +19,10 @@ public interface ExpenseRepository extends JpaRepository<Expense, Long> {
     List<Expense> findByAccountAndCategory(Account account, Category category);
 
     List<Expense> findByAccountAndDateBetween(Account account, LocalDateTime startDate, LocalDateTime endDate);
+
+    List<Expense> findByAccountAndName(Long accountId, String name);
+
+    Optional<Expense> findByIdAndAccount(Long id, Long accountId);
+    List<Expense> findByAccountIdAndNameContainingIgnoreCase(Long accountId, String name);
+
 }

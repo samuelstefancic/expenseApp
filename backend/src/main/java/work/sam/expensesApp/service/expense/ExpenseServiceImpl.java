@@ -69,6 +69,30 @@ public class ExpenseServiceImpl implements ExpenseService {
                 .orElseThrow(() -> new ExpenseException("Expense with ID : " + id + " not found", HttpStatus.NOT_FOUND));
     }
 
+    // Account
+
+    //Get expense for account
+    public List<Expense> getExpensesByAccountId(Long accountId) {
+        Account tempAcc = accountRepository.findById(accountId).orElseThrow(
+                () -> new AccountException("Account with ID : " + accountId + "not found", HttpStatus.NOT_FOUND));
+        List<Expense> expenses = expenseRepository.findByAccountId(accountId);
+        return expenses != null && !expenses.isEmpty() ? expenses : new ArrayList<>();
+    }
+
+    //Sum of expenses for account
+
+    public BigDecimal getTotalExpensesByAccountId(Long accountId) {
+        Account account = accountRepository.findById(accountId)
+                .orElseThrow(() ->
+                        new AccountException("Account not found with id " + accountId, HttpStatus.NOT_FOUND));
+        List<Expense> expenses = expenseRepository.findByAccountId(accountId);
+        if (expenses == null || expenses.isEmpty()) {
+            return BigDecimal.ZERO;
+        }
+        return expenses.stream().map(Expense::getAmount).reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
+
+
     //Find expense by category
     public List<Expense> findExpensesAccountByCategory(Long accountId, Long categoryId) {
         Account account = accountRepository.findById(accountId)
@@ -83,18 +107,7 @@ public class ExpenseServiceImpl implements ExpenseService {
                 .orElseThrow(() -> new AccountException("Account with id : " + accountId + " not found", HttpStatus.NOT_FOUND ));
         return expenseRepository.findByAccountAndDateBetween(account, startDate, endDate);
     }
-    //Sum of expenses by a category
 
-    public BigDecimal getTotalExpensesByAccountId(Long accountId) {
-        Account account = accountRepository.findById(accountId)
-                .orElseThrow(() ->
-                        new AccountException("Account not found with id " + accountId, HttpStatus.NOT_FOUND));
-        List<Expense> expenses = expenseRepository.findByAccountId(accountId);
-        if (expenses == null || expenses.isEmpty()) {
-            return BigDecimal.ZERO;
-        }
-        return expenses.stream().map(Expense::getAmount).reduce(BigDecimal.ZERO, BigDecimal::add);
-    }
 
     //Update Expense
 
@@ -118,6 +131,8 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     //return a list of expenses
+
+    //user
     public List<Expense> getExpensesByUserId(Long userId) {
         User tempUser = userRepository.findById(userId).orElseThrow(() -> new UserException("User not found with id : " + userId, HttpStatus.NOT_FOUND));
         List<Expense> expenses = expenseRepository.findByUserId(userId);
@@ -134,6 +149,10 @@ public class ExpenseServiceImpl implements ExpenseService {
         }
         return expenses.stream().map(Expense::getAmount).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
+
+
+
+
 
     public void setDescriptionWithValidation(Expense expense, List<Description> descriptions) {
         if (descriptions == null || descriptions.isEmpty()) {

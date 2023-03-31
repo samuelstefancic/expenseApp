@@ -30,4 +30,13 @@ public class Category {
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Expense> expenses = new ArrayList<>();
+
+    public Category(String name) {
+        this.name = name;
+    }
+    public Category(String name, Account account)
+    {
+        this.name = name;
+        this.account = account;
+    }
 }

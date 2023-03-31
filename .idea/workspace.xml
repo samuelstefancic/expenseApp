@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Ajout méthodes controller, modification et ajout de fonctionnalités, amélioration lisibilité globale du code">
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/Temp/TempController.java" afterDir="false" />
+    <list default="true" id="3e41732d-f170-407a-a2fd-9f7160b872d1" name="Changes" comment="Fix expense, fix account">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/expense/ExpenseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/service/expense/ExpenseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/controller/ExpenseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/controller/ExpenseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/entity/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/work/sam/expensesApp/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/ExpensesAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/ExpensesAppApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/TestGlobal.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/TestGlobal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/UserControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/expenseTest/ExpenseServiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/work/sam/expensesApp/expenseTest/ExpenseServiceUnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/entity/Expense.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/entity/Expense.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/exception/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/repository/ExpenseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/repository/ExpenseRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/service/ExpenseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/work/sam/expensesApp/service/UserService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/ExpensesAppApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/ExpensesAppApplicationTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/UserControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/test-classes/work/sam/expensesApp/UserControllerTest.class" afterDir="false" />
     </list>
@@ -88,7 +84,7 @@
       <recent name="C:\Users\ungk\OneDrive\Bureau\projetsPersos\expenseApp\backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ExpensesAppApplication">
+  <component name="RunManager" selected="JUnit.TestGlobal.testRelationshipEntities">
     <configuration name="AccountDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExpensesApp" />
       <extension name="coverage">
@@ -104,23 +100,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GlobalDTOTest.createUserDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExpenseServiceUnitTest.testCreateExpense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExpensesApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="work.sam.expensesApp.DTOTest.*" />
+          <option name="PATTERN" value="work.sam.expensesApp.expenseTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="work.sam.expensesApp.DTOTest" />
-      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.DTOTest.GlobalDTOTest" />
-      <option name="METHOD_NAME" value="createUserDTO" />
+      <option name="PACKAGE_NAME" value="work.sam.expensesApp.expenseTest" />
+      <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.expenseTest.ExpenseServiceUnitTest" />
+      <option name="METHOD_NAME" value="testCreateExpense" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestGlobal.createUser2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGlobal.testCreateExpense" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExpensesApp" />
       <extension name="coverage">
         <pattern>
@@ -130,13 +126,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="work.sam.expensesApp" />
       <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.TestGlobal" />
-      <option name="METHOD_NAME" value="createUser2" />
+      <option name="METHOD_NAME" value="testCreateExpense" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestGlobal.createUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGlobal.testRelationshipEntities" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ExpensesApp" />
       <extension name="coverage">
         <pattern>
@@ -146,7 +142,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="work.sam.expensesApp" />
       <option name="MAIN_CLASS_NAME" value="work.sam.expensesApp.TestGlobal" />
-      <option name="METHOD_NAME" value="createUserTest" />
+      <option name="METHOD_NAME" value="testRelationshipEntities" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -189,11 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestGlobal.testRelationshipEntities" />
+        <item itemvalue="JUnit.TestGlobal.testCreateExpense" />
+        <item itemvalue="JUnit.ExpenseServiceUnitTest.testCreateExpense" />
         <item itemvalue="JUnit.UserDTOTest" />
         <item itemvalue="JUnit.AccountDTOTest" />
-        <item itemvalue="JUnit.GlobalDTOTest.createUserDTO" />
-        <item itemvalue="JUnit.TestGlobal.createUser2" />
-        <item itemvalue="JUnit.TestGlobal.createUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +209,7 @@
       <workItem from="1679603798631" duration="1727000" />
       <workItem from="1679605650856" duration="2105000" />
       <workItem from="1679647751602" duration="18020000" />
-      <workItem from="1679742250096" duration="61932000" />
+      <workItem from="1679742250096" duration="70427000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout dépendances">
       <created>1679422375373</created>
@@ -376,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680196006962</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Modification Expense">
+      <created>1680266326358</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680266326359</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,6 +421,8 @@
     <MESSAGE value="Update Mappers, update Tests" />
     <MESSAGE value="update UserController" />
     <MESSAGE value="Ajout méthodes controller, modification et ajout de fonctionnalités, amélioration lisibilité globale du code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout méthodes controller, modification et ajout de fonctionnalités, amélioration lisibilité globale du code" />
+    <MESSAGE value="Modification Expense" />
+    <MESSAGE value="Fix expense, fix account" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix expense, fix account" />
   </component>
 </project>

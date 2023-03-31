@@ -49,11 +49,11 @@ class ExpensesAppApplicationTests {
 		Description description2 = new Description("Achat poutre");
 		List<Description> descriptions1 = Collections.singletonList(description1);
 		List<Description> descriptions2 = Collections.singletonList(description2);
-
+/*
 		Expense expense1 = new Expense(BigDecimal.valueOf(20000),descriptions1,  user3);
 		Expense expense2 = new Expense(BigDecimal.valueOf(30000), descriptions2, user3);
 		expenseServiceImpl.createExpense(expense1);
-		expenseServiceImpl.createExpense(expense2);
+		expenseServiceImpl.createExpense(expense2);*/
 
 		List<Expense> expenses = expenseServiceImpl.getExpensesByUserId(user3.getId());
 		assertEquals(2, expenses.size());

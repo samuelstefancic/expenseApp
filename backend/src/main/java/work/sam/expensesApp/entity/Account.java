@@ -58,4 +58,14 @@ public class Account {
         this.expenses = expenses;
         this.categories = categories;
     }
+
+    public void addCategory(Category category) {
+        categories.add(category);
+        category.setAccount(this);
+    }
+
+    public void addExpense(Expense expense) {
+        expenses.add(expense);
+        expense.setAccount(this);
+    }
 }

@@ -47,6 +47,9 @@ public class ExpenseServiceImpl implements ExpenseService {
     //Create
 
     public Expense createExpense(Expense expense) {
+        if (expense.getDate() == null) {
+            expense.setDate(LocalDateTime.now());
+        }
         try {
             expense.getDescription().forEach(description -> description.setExpense(expense));
             return expenseRepository.save(expense);
@@ -56,6 +59,9 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     public Expense createExpenseForUser(Long userId, Expense expense) {
+        if (expense.getDate() == null) {
+            expense.setDate(LocalDateTime.now());
+        }
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new UserException("User not found with id : " + userId, HttpStatus.NOT_FOUND));
         expense.setUser(user);
@@ -115,6 +121,10 @@ public class ExpenseServiceImpl implements ExpenseService {
         Expense existingExpense = expenseRepository.findById(id)
                 .orElseThrow(() -> new ExpenseException("Expense not found with id: " + id, HttpStatus.NOT_FOUND));
         setDescriptionWithValidation(existingExpense, updatedExpense.getDescription());
+        existingExpense.setAmount(updatedExpense.getAmount());
+        existingExpense.setName(updatedExpense.getName());
+        existingExpense.setCategory(updatedExpense.getCategory());
+        existingExpense.setAccount(updatedExpense.getAccount());
         return expenseRepository.save(existingExpense);
     }
 

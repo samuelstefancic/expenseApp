@@ -38,6 +38,9 @@ public class Expense {
     @PositiveOrZero
     private BigDecimal amount;
 
+    @Column(name = "name", nullable = true)
+    private String name;
+
     @Column(name = "date", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime date;
 
@@ -57,19 +60,22 @@ public class Expense {
     private Account account;
 
 
-    public Expense(BigDecimal amount, List<Description> description, User user) {
+    public Expense(BigDecimal amount, String name, List<Description> description, User user) {
         this.amount = amount;
         this.description = description;
         this.user = user;
+        this.name = name;
         this.date = LocalDateTime.now();
     }
 
-    public Expense(BigDecimal amount, LocalDateTime date) {
+    public Expense(BigDecimal amount, String name, LocalDateTime date) {
         this.amount = amount;
         this.date = date;
+        this.name = name;
     }
-    public Expense(BigDecimal amount) {
+    public Expense(BigDecimal amount, String name) {
         this.amount = amount;
+        this.name = name;
     }
 
     public void setAmountWithValidation(BigDecimal amount) {
